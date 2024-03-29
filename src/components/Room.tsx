@@ -16,7 +16,7 @@ export default function Room(){
         </Box>
         <Grid gap={2} templateColumns={"6fr 1fr"}>
             <Text as={"b"} noOfLines={1} fontSize={"md"}>Namsan-myeon, Chuncheon, 한국의 집 전체ddsadasdsss</Text>
-            <HStack spacing={1}>
+            <HStack _hover={{color:"red.500"}} color={"gray"} spacing={1}>
                 <FaStar size={15}/>
                 <Text>5.0</Text>
             </HStack>

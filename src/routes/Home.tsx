@@ -1,4 +1,4 @@
-import { Grid } from "@chakra-ui/react";
+import { Box, Grid, Skeleton, SkeletonText } from "@chakra-ui/react";
 import Room from "../components/Room";
 
 export default function Home(){
@@ -18,11 +18,13 @@ export default function Home(){
             xl:"repeat(4, 1fr)",
             "2xl":"repeat(5, 1fr)"
         }}
-    >
-        {[1, 2, 3, 4, 5, 6, 7 ,8, 9, 10, 11, 12, 13, 14, 15, 16, 17
-        ].map(index => 
-            <Room key={index}/>
-        )}
+    >   
+        <Box>
+            <Skeleton height={280} rounded={"2xl"} mb={4} />
+            <SkeletonText w="50%" noOfLines={2} mb={5}/>
+            <SkeletonText w="20%" noOfLines={1}/>
+        </Box>{""}
+        <Room />
     </Grid>
     )
 };
