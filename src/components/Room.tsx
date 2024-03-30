@@ -21,7 +21,7 @@ export default function Room({
     const textColor = useColorModeValue("gray.600", "gray.100");
     return(
         <VStack spacing={1} alignItems={"flex-start"}>
-        <Box maxH="280" position={"relative"} overflow={"hidden"} rounded={"3xl"}>
+        <Box cursor={"pointer"} _hover={{ opacity: .7 }} maxH="280" position={"relative"} overflow={"hidden"} rounded={"3xl"}>
             <Image 
             minH="280"
             src={imageUrl}
