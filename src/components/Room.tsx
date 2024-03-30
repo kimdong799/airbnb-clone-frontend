@@ -21,10 +21,9 @@ export default function Room({
     const textColor = useColorModeValue("gray.600", "gray.100");
     return(
         <VStack spacing={1} alignItems={"flex-start"}>
-        <Box position={"relative"} overflow={"hidden"} rounded={"3xl"}>
+        <Box maxH="280" position={"relative"} overflow={"hidden"} rounded={"3xl"}>
             <Image 
             minH="280"
-            overflow={"clip"}
             src={imageUrl}
             />
             <Button variant={"unstyled"} position={"absolute"} top={5} right={5} color={"white"}>
