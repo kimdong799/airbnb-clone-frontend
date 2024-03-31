@@ -11,6 +11,7 @@ interface IPhoto{
     description: string;
 }
 interface IRoom{
+    id: number;
     pk: number;
     name: string;
     country: string;
@@ -60,6 +61,8 @@ export default function Home(){
       ) : null}
       {data?.map(room => 
         <Room
+            key={room.pk}
+            pk={room.id}
             imageUrl={room.photos[0].file}
             name={room.name}
             rating={room.rating}
