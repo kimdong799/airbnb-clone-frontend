@@ -20,7 +20,8 @@ export default function Room({
     city, 
     country, 
     price
-    }:IRoomProps){
+    }:IRoomProps)
+    {
     const textColor = useColorModeValue("gray.600", "gray.100");
     return(
         <Link to={`/rooms/${pk}`}>
