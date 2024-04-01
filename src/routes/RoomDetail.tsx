@@ -6,7 +6,13 @@ export default function RoomDetail() {
     // useParams는 URL에 있는 모든 변수를 가져온다
     // router에서 받고싶은 것을 파라미터로 특정한다 (:roomPK)
     const { roomPk } = useParams();
-    const { isLoading, data } = useQuery({queryKey:[`room:${roomPk}`], queryFn:getRoom})
-    console.log(data);
-    return <h1>Hello</h1>;
+    const { isLoading, data } = useQuery(
+        {
+            queryKey:[`rooms`, roomPk], 
+            queryFn:getRoom
+        }
+    );
+    return (
+        <h1>sdsa</h1>
+    );
 }
