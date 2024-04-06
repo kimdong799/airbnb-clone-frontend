@@ -1,3 +1,4 @@
+import { QueryFunctionContext } from "@tanstack/react-query";
 import axios from "axios";
 
 const instance = axios.create({
@@ -8,4 +9,4 @@ export const getRooms = () =>
     instance.get("rooms/").then((response) => response.data);
 
 export const getRoom = () =>
-    instance.get(`rooms/3`).then((response) => response.data);
+    instance.get(`rooms/1`).then((response) => response.data);
