@@ -3,6 +3,7 @@ import Room from "../components/Room";
 import { useQuery } from "@tanstack/react-query"
 import RoomSkeleton from "../components/RoomSkeleton";
 import { getRooms } from "./api";
+import { IRoomList } from "../types"
 
 interface IPhoto{
     pk: string;
@@ -60,7 +61,7 @@ export default function Home(){
       ) : null}
       {data?.map(room => 
         <Room
-            pk={room.id}
+            pk={room.pk}
             imageUrl={room.photos[0].file}
             name={room.name}
             rating={room.rating}
