@@ -63,3 +63,9 @@ category: {
 owner: IRoomOwner;
 amenities: IAmenity[];
 }
+
+export interface IReview{
+    payload:string;
+    rating:number;
+    user:IRoomOwner;
+}
