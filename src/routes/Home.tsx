@@ -4,23 +4,7 @@ import { useEffect, useState } from "react";
 import { useQuery } from "@tanstack/react-query"
 import RoomSkeleton from "../components/RoomSkeleton";
 import { getRooms } from "./api";
-
-interface IPhoto{
-    pk: string;
-    file: string;
-    description: string;
-}
-interface IRoom{
-    id: number;
-    pk: number;
-    name: string;
-    country: string;
-    city: string;
-    price: number;
-    rating: number;
-    is_owner: boolean;
-    photos: IPhoto[];
-}
+import { IPhoto, IRoom } from "../types"
 
 
 export default function Home(){
