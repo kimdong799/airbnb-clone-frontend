@@ -24,6 +24,7 @@ description: string;
 }
 
 export interface IRoomList {
+id: number;
 pk: number;
 name: string;
 country: string;
