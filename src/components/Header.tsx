@@ -1,9 +1,11 @@
-import { Box, HStack, IconButton, Button, useDisclosure, useColorMode, LightMode, useColorModeValue, Stack } from "@chakra-ui/react";
+import { Box, HStack, IconButton, Button, useDisclosure, useColorMode, LightMode, useColorModeValue, Stack, Avatar } from "@chakra-ui/react";
 import { FaAirbnb, FaMoon, FaSun } from "react-icons/fa";
 import LoginModal from "./LoginModal";
 import SignUpModal from "./SignUpModal";
+import useUser from "../lib/useUser";
 
 export default function Header(){
+    const { userLoading, isLoggedIn, user } = useUser();
     const { colorMode, toggleColorMode } = useColorMode();
     // LoginModal, SignUpModal 구분
     const{
@@ -39,10 +41,16 @@ export default function Header(){
             </Box>
             <HStack spacing={2}>
                 <IconButton onClick={toggleColorMode} variant={"ghost"} aria-label="Toggle dark mode" icon={ <Icon /> }/>
+                {!userLoading && !isLoggedIn ? (
+                <>
                 <Button onClick={onLoginOpen}>Log in</Button>
                 <LightMode>
                     <Button onClick={onSignUpOpen} colorScheme={"red"}>Sign up</Button>
                 </LightMode>
+                </>
+            ) : (
+                <Avatar size={"md"} />
+            )}
             </HStack>
             <LoginModal isOpen={isLoginOpen} onClose={onLoginClose} />
             <SignUpModal isOpen={isSignUpOpen} onClose={onSignUpClose} />
