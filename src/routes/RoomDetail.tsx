@@ -23,7 +23,7 @@ export default function RoomDetail() {
                 lg:40
             }}>
             <Skeleton height={"43px"} width={"30%"} isLoaded={!isLoading}>
-                <Heading noOfLines={1}>{data?.name}</Heading>
+                <Heading fontSize={24} noOfLines={1}>{data?.name}</Heading>
             </Skeleton>
             <Grid
                 mt={8}
